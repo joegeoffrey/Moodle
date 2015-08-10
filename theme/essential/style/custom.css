@@ -1,0 +1,36 @@
+/**
+ * Custom CSS
+ * This is the very last piece of CSS loaded, so if something looks weird,
+ * try removing your custom CSS from the theme settings page.
+ */
+.block {
+    background: #F0F8FF none repeat scroll 0% 0%;
+    padding: 6px;
+    border: 3px solid #E3E3E3;
+    border-radius: 6px;
+}
+.block .header .title h2, .block h3.main {
+    font-size: 1.15em;
+    line-height: 26px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 2px;
+}
+
+element {
+}
+#page #page-content #region-main, #page #page-content div[role="main"], .pagelayout-redirect #page-content #region-main, .pagelayout-redirect #page-content div[role="main"] {
+    border-radius: 6px;
+    background-color: #F0F8FF;
+    padding: 2px 10px;
+    margin-bottom: 20px;
+    border: 3px solid rgb(227, 227, 227);
+}
+
+
+[[setting:customcss]]
+
+[[setting:fontfilesheading]]
+
+[[setting:fontfilesbody]]
