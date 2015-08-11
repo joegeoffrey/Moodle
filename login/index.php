@@ -347,7 +347,7 @@ if (!empty($SESSION->loginerrormsg)) {
 $PAGE->set_title("$site->fullname: $loginsite");
 $PAGE->set_heading("$site->fullname");
 
-echo $OUTPUT->header();
+//echo $OUTPUT->header();
 
 if (isloggedin() and !isguestuser()) {
     // prevent logging when already logged in, we do not want them to relogin by accident because sesskey would be changed

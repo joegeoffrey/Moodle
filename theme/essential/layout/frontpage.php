@@ -120,96 +120,6 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         }
         ?>
         <!-- End Frontpage Content -->
-        <?php}
-        ?>
- <style type="text/css">
-  @font-face { font-family: Century; src: url('GOTHIC.ttf'); 
-  } 
-  body{ font-family: Century; 
-    background: rgb(51,51,51); 
-    color: #fff; 
-    padding:20px; 
-    } 
-    
-    .pagina{ 
-        width:auto; 
-        height:auto; 
-        }
-
-    .linha{ 
-            width:auto; 
-            padding:5px; 
-            height:auto; 
-            display:table; 
-        }
-
-    .tile{ 
-        height:100px; 
-        width:100px; 
-        float:left; 
-        margin:0 5px 0 0; 
-        padding:2px;
-        transition: all 0.7s ease; 
-        }
-    .tile:hover{
-
-        transform:scale(1.2);
-
-    }
-    .image:hover {
-        -webkit-transform: translate(20px,-50px);
-        transform: translate(20px,-50px);
-        opacity: 0.4;
-    }
-    .image {
-        opacity: 1;
-        -webkit-transition: all 0.7s ease;
-        transition: all 0.7s ease;
-       } 
-    .tileLargo{ 
-        width:210px; 
-    }
-
-    .amarelo{ 
-        background:#DAA520; 
-        } 
-
-    .vermelho{ 
-        background:#CD0000; 
-        } 
-
-        .azul{ 
-            background:#4682B4; 
-            } 
-
-        .verde{ 
-            background-color: #2E8B57; 
-        } 
-
-
-  </style>
-    <link rel="stylesheet" href="estilo.css"/> 
-    <meta charset="UTF-8"/> 
-    <script type="text/javascript" src="<http://code.jquery.com/jquery-1.7.2.min.js>"></script> 
-    <script type="text/javascript" src="script.js"></script> 
-<body> 
-   <center> <h1>Welcome <?php echo $USER->userid ; ?>to the Training </h1> 
-    <div class="pagina"> 
-        <div class="linha">
-           <a href="http://localhost/moodle/course/view.php?id=2"><div class="tile tileLargo azul"><span class="titulo"><h4><b>My Courses</b></h4></span></div></a>
-           
-          <a href="http://localhost/moodle/course/index.php"> <div class="tile tileLargo vermelho"><h4><b>All Courses</b></h4></div></a>
-            
-           <div class="tile tileLargo amarelo"><h4><b>Weekly News</b></h4></div>
-           <div class="tile tileLargo verde"><h4><b>Announcements</b></h4></div>
-        
-    </div> </center>
-
-
-
-
-
-
 
         <!-- Start Marketing Spots -->
         <?php
@@ -236,30 +146,20 @@ if ($enable1alert || $enable2alert || $enable3alert) {
         }
         ?>
         <!-- End Middle Blocks -->
-        
+
         <div id="page-content" class="row-fluid">
-
-
             <section id="<?php echo $regionbsid; ?>">
                 <?php if ($OUTPUT->get_setting('frontpageblocks')) { ?>
-
                 <section id="region-main" class="span9 pull-right">
-                
-                 
                     <?php } else { ?>
-                    
                     <section id="region-main" class="span9 desktop-first-column">
                         <?php } ?>
                         <?php
-                        //echo $OUTPUT->course_content_header();
+                        echo $OUTPUT->course_content_header();
                         echo $OUTPUT->main_content();
                         echo $OUTPUT->course_content_footer();
                         ?>
                     </section>
-                
-            
-
-
                     <?php
                     if ($OUTPUT->get_setting('frontpageblocks')) {
                         echo $OUTPUT->blocks('side-pre', 'span3 desktop-first-column');
@@ -267,6 +167,8 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                         echo $OUTPUT->blocks('side-pre', 'span3 pull-right');
                     }
                     ?>
+                </section>
+        </div>
 
         <!-- End Main Regions -->
 
@@ -276,7 +178,6 @@ if ($enable1alert || $enable2alert || $enable3alert) {
                     <h4><?php echo get_string('visibleadminonly', 'theme_essential'); ?></h4>
                     <?php echo $OUTPUT->blocks('hidden-dock'); ?>
                 </div>
-
             </div>
         <?php } ?>
 

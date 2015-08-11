@@ -13,11 +13,11 @@ $CFG->dbpass    = '';
 $CFG->prefix    = 'mdl_';
 $CFG->dboptions = array (
   'dbpersist' => 0,
-  'dbport' => '',
+  'dbport' => 3306,
   'dbsocket' => '',
 );
 
-$CFG->wwwroot   = 'http://localhost/moodle';
+$CFG->wwwroot   = 'http://127.0.0.1/moodle';
 $CFG->dataroot  = 'C:\\wamp\\moodledata';
 $CFG->admin     = 'admin';
 

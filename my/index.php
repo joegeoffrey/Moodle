@@ -160,23 +160,28 @@ if ($PAGE->user_allowed_editing()) {
 
 } else {
     $USER->editing = $edit = 0;
-
 }
 
 echo $OUTPUT->header();
-?>
 
-<html> 
-<head>
-  <style type="text/css">
+echo $OUTPUT->custom_block_region('content');?>
+ <style type="text/css">
   @font-face { font-family: Century; src: url('GOTHIC.ttf'); 
   } 
-  body{ font-family: Century; 
-    background: rgb(51,51,51); 
+
+  body{ 
+    font-family: Century; 
     color: #fff; 
     padding:20px; 
-    } 
+    }
+
+    .tile:hover{
+        transform:scale(1.2);
+    }
     
+    .tileLargo:hover{
+        transform:scale(1.2);
+    }
     .pagina{ 
         width:auto; 
         height:auto; 
@@ -196,20 +201,17 @@ echo $OUTPUT->header();
         margin:0 5px 0 0; 
         padding:2px;
         transition: all 0.7s ease; 
-        }
-    .tile:hover{
-
-        transform:scale(1.2);
-
-    } 
-
+        } 
     .tileLargo{ 
-        width:210px; 
+        width:210px;
+        transition: all 0.7s ease; 
+ 
     }
 
     .amarelo{ 
-        background:#DAA520; 
-        } 
+        background-color: #000099;
+        background-repeat: no-repeat;
+        }
 
     .vermelho{ 
         background:#CD0000; 
@@ -222,7 +224,11 @@ echo $OUTPUT->header();
         .verde{ 
             background-color: #2E8B57; 
         } 
-
+        p.upper{
+          text-transform: uppercase;
+          color: #00CC66;
+          font-variant: small-caps;
+        }
 
   </style>
     <link rel="stylesheet" href="estilo.css"/> 
@@ -231,29 +237,50 @@ echo $OUTPUT->header();
     <script type="text/javascript" src="script.js"></script> 
 </head> 
 <body> 
-    
+    <p class="upper" style="font-size: 20px;"><b>Welcome <?php echo $USER->username;?></b></p>
     <div class="pagina"> 
         <div class="linha">
-           <div class="tile amarelo"><span class="titulo">My course</span><br/></div>
-           <div class="tile azul"></div>
-           <div class="tile tileLargo vermelho"></div>
-           <div class="tile verde"></div> 
-           <div class="tile tileLargo amarelo"></div>
+           <a href="http://127.0.0.1/moodle/trainee.php"target="_blank">
+           <div class="tile amarelo">
+              <span class="titulo">TRAINEE</span><br/></div></a>
+           <a href="http://127.0.0.1/moodle/facilitator.php"target="_blank">
+           <div class="tile tileLargo vermelho">
+               <span class="titulo">FACILITATOR</span><br/></div></a>
+           <div class="tile azul">
+               <span class="titulo">HACKATHON</span><br/>
+        </div>
+        <div class="tile verde">
+               <span class="titulo">ACIA</span><br/>
+           </div>
         </div> 
         <div class="linha">
-           <div class="tile tileLargo amarelo"></div>
-           <div class="tile azul"></div>
-           <div class="tile verde"></div>
-           <div class="tile vermelho"></div> 
-           <div class="tile tileLargo verde"></div>
+           <div class="tile tileLargo amarelo">
+               <span class="titulo">I HAVE A PRODUCT</span><br/>
+           </div>
+           <div class="tile azul">
+               <span class="titulo">I HAVE AN IDEA</span><br/>
+           </div>
+           <div class="tile verde">
+               <span class="titulo">INTERNSHIP</span><br/>
+           </div>
+           <div class="tile vermelho">
+               <span class="titulo">SERVICES</span><br/>
+           </div>
+        </div> 
+        <div class="linha">
+           <div class="tile amarelo">
+               <span class="titulo">INCUBATION</span><br/>
+           </div>
+           <div class="tile vermelho">
+               <span class="titulo">EVENTS</span><br/>
+           </div>
+           <div class="tile tileLargo verde">
+               <span class="titulo">GALLERY</span><br/>
+           </div> 
+           <div class="tile azul">
+               <span class="titulo">CONTACT US</span><br/></div>
         </div> 
     </div> 
-</body> 
-</html>
-
 <?php
-
-//commented out to remove the middle block 
-//echo $OUTPUT->custom_block_region('content');
-
 echo $OUTPUT->footer();
+?>
